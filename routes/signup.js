@@ -9,9 +9,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', async (req, res, next) => {
+  console.log(req);
   const username = req.body.username;
   const password = req.body.password;
-  console.log(username);
   if(password < 3){
       console.log('need more than 3 characters');
   }
@@ -20,7 +20,7 @@ router.post('/', async (req, res, next) => {
     await pool.promise()
     .query('INSERT INTO jolabn_login (username, password) VALUES (?,?)', [username,hash])
     .then(([rows, fields]) => {
-        req.session.user = username;
+        //req.session.username = username;
         res.redirect("/");
     }).catch(err => {
         console.log(err);
