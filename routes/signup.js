@@ -4,6 +4,7 @@ var router = express.Router();
 const pool = require('../database');
 
 
+
 router.get('/', function(req, res, next) {
   res.render('signup.njk', { title: 'Sign up' });
 });
@@ -20,8 +21,7 @@ router.post('/', async (req, res, next) => {
     await pool.promise()
     .query('INSERT INTO jolabn_login (username, password) VALUES (?,?)', [username,hash])
     .then(([rows, fields]) => {
-        //req.session.username = username;
-        res.redirect("/");
+        res.redirect("/signin");
     }).catch(err => {
         console.log(err);
     });

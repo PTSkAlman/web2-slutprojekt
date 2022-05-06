@@ -7,4 +7,4 @@ Databas
 Routes
 - Sign up
 - Sign in
-- Profile
+- Profile (Profile ska innehålla varje enskild användares tasks)

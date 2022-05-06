@@ -7,3 +7,5 @@ Sist byggde jag upp skelettet för projektet, det gick hyfsat glömde att man sk
 # Vecka 18
 ## Onsdag
 Sist gjorde jag databasen och alla routes som behövs för att sidan ska fungera. Det gick väldigt bra jag hann till och med routes när det bara var databaserna jag hade tänkt göra. Idag ska fixa signin och signup.
+## Fredag
+Sist fixade jag signup. Det gick hyffsat fick inte till signin dock. Idag ska jag fixa signin och en profile page. Nästa gång fixa session.
