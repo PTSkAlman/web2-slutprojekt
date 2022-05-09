@@ -16,17 +16,15 @@ router.post('/', async (req, res, next) => {
   await pool.promise()
       .query('SELECT * FROM jolabn_login WHERE username=?', [username])
       .then(([rows, fields]) => {
-          
         const user = rows[0];
 
         if(user) {
             bcrypt.compare(password, user.password, (err, result) => {  
 
                 if(result) {
-                    req.session.user = username;
+                    req.session.username = username;
                     return res.redirect("/profile");
                 } else {
-                    //res.status(500).redirect("/login?response=0");
                     console.log("Cannot log in");
                 }
 
@@ -35,7 +33,6 @@ router.post('/', async (req, res, next) => {
 
       })
       .catch(err => {
-          //res.status(500).redirect("/login?response=0");
           console.log(err);
       });
 });

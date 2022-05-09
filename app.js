@@ -1,6 +1,6 @@
 require('dotenv').config()
 var express = require('express');
-var session = require('express-session')
+const session = require('express-session')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -15,13 +15,13 @@ var app = express();
 const nunjucks = require('nunjucks');
 
 var app = express()
-app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'd4bb1ng',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
+  cookie: { sameSite: true }
 }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(logger('dev'));
 app.use(express.json());

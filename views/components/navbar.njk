@@ -9,9 +9,14 @@
       <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right d-flex flex-row">
-      {% if user == undefined %}
+      {% if username == undefined %}
       <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
+      {% if username %}
+        <li class="nav-item">
+            <a class="nav-link" href="/profile">My profile{% if username %} ({{ username }}){% endif %}</a>
+        </li>
       {% endif %}
     </ul>
   </div>
