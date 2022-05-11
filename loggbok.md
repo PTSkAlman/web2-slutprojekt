@@ -13,3 +13,6 @@ Sist fixade jag signup. Det gick hyffsat fick inte till signin dock. Idag ska ja
 # Vecka 19
 ## Måndag
 Sist fixade jag login och började på session. Idag ska jag fixa session så varje login har en profil.
+
+## Onsdag
+Sist fixade jag session. Idag ska jag fixa personliga tasks.

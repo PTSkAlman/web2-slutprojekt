@@ -1,7 +1,6 @@
 // const { response } = require("../../app");
 
 window.addEventListener('load', () => {
-    console.log('hello world');
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -11,7 +10,7 @@ window.addEventListener('load', () => {
 
             const id = e.target.id.split("-")[1];
 
-            const url = `/tasks/${id}/complete`
+            const url = `/profile/${id}/complete`
 
             fetch(url, {
                 method: 'POST'

@@ -23,6 +23,7 @@ router.post('/', async (req, res, next) => {
 
                 if(result) {
                     req.session.username = username;
+                    req.session.user_id = user.id;
                     return res.redirect("/profile");
                 } else {
                     console.log("Cannot log in");
