@@ -16,3 +16,6 @@ Sist fixade jag login och började på session. Idag ska jag fixa session så va
 
 ## Onsdag
 Sist fixade jag session. Idag ska jag fixa personliga tasks.
+
+## Fredag
+Sist började jag med tasks, men vart inte färdig. Idag ska jag fortsätta med tasks och göra en admin view för att få in en SQL JOIN i arbetet.

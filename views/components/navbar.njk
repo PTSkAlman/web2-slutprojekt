@@ -6,7 +6,7 @@
     <ul class="nav navbar-nav d-flex flex-row">
       <li class="active"><a href="/">Home</a></li>
       <li><a href="/profile">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
+      <li><a href="/">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right d-flex flex-row">
       {% if username == undefined %}
@@ -19,5 +19,10 @@
         </li>
       {% endif %}
     </ul>
+    {% if username %}
+      <form class="d-flex" action="/logout" method="post">
+        <button class="btn btn-primary" type="submit">Logout</button>
+      </form>
+    {% endif %}
   </div>
 </nav>
