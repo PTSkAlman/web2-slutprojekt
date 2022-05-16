@@ -2,38 +2,7 @@
 {% block  content %}
 {% include "components/navbar.njk" %}
 
-<main class="container">
-    {% include "components/taskform.njk" %}
-    <div>
-        <ul class="list-group">
-        {% for task in tasks %}
-        <li class="list-group-item"> 
-            {% if username == 'admin' %}
-                <h3>{{task.username}}</h3>
-            {% endif %}
-            <div class="d-flex justify-content-between">
-                <div class="form-check me-3">
-                    <input 
-                        class="form-check-input" 
-                        type="checkbox"
-                        value="{{task.completed}}"
-                        name="task-{{task.id}}"
-                        id="task-{{task.id}}"
-                        {% if task.completed %} checked {% endif %}>
-                    {{task.task}} 
-                </div>
-                <div class="d-flex">
-                    <a href="/profile/{{task.id}}/delete" class="btn btn-sm btn-danger">Delete task</a>
-                </div>
-            </div>
-        </li>
-    
-        {% endfor %}
-        </ul>
-        
-    </div>
-</main>
-
-<script src="/javascripts/complete.js"></script>
+<img src="https://avatars.dicebear.com/api/miniavs/{{username}}.svg" alt="profile picture" width="400" height="400">
+<h1>{{username}}</h1>
 
 {% endblock %}

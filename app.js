@@ -10,6 +10,8 @@ var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var signinRouter = require('./routes/signin');
 var profileRouter = require('./routes/profile');
+var tasksRouter = require('./routes/tasks');
+
 
 var app = express();
 const nunjucks = require('nunjucks');
@@ -39,6 +41,7 @@ app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/signin', signinRouter);
 app.use('/profile', profileRouter);
+app.use('/tasks', tasksRouter);
 
 
 
