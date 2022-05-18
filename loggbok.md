@@ -23,3 +23,5 @@ Sist började jag med tasks, men vart inte färdig. Idag ska jag fortsätta med 
 # Vecka 20
 ## Måndag
 Sist gjorde jag en admin view. Idag ska jag fixa en task page och en profile.
+## Onsdag
+Sist separerade jag profile och task page. Idag ska jag fixa designen på sidan.
