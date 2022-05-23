@@ -1,9 +1,14 @@
-@import "components/color";
-
-body {
-  padding: 50px;
+@import 'components/container';
+* {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   &>a {
     color: #00B7FF
   }
+}
+.navbar {
+  margin: 0;
+  border: none;
+}
+.taskform {
+  padding-top: 15px;
 }

@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+.container {
+  background-color: #222222; }
 
-a {
-  color: #00B7FF; }
+* {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  * > a {
+    color: #00B7FF; }
+
+.navbar {
+  margin: 0;
+  border: none; }
+
+.taskform {
+  padding-top: 15px; }
 
 /*# sourceMappingURL=style.css.map */
