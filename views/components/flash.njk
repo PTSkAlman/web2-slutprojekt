@@ -1,0 +1,8 @@
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+{% if flash %}
+  <div id="liveToast" class="toast fade show bg-success toast-header text-white" role="alert" aria-live="assertive" aria-atomic="true">
+    <strong class="me-auto">{{ flash }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  {% endif %}
+</div>

@@ -5,11 +5,16 @@ const pool = require('../database');
 router.get('/', async (req, res, next) => {
     if (!req.session.username) return res.redirect("/signin");
 
+    const flash = req.session.flash;
+    console.log(flash);
+    req.session.flash = null;
+
     if (req.session.username !== 'admin') {
         await pool.promise()
         .query('SELECT * FROM jolabn_tasks WHERE user_id = ? ORDER BY created_at DESC', [req.session.user_id])
         .then(([rows, fields]) => {
             res.render('tasks.njk', {
+                flash: flash,
                 tasks: rows,
                 title: 'Tasklist',
                 layout: 'layout.njk',
@@ -30,6 +35,7 @@ router.get('/', async (req, res, next) => {
         .then(([rows, fields]) => {
             console.log(rows);
             res.render('tasks.njk', {
+                flash: flash,
                 tasks: rows,
                 title: 'Tasklist',
                 layout: 'layout.njk',
@@ -53,6 +59,7 @@ router.post('/', async (req, res, next) => {
 
     if (task.length < 3) {
         res.redirect('/tasks');
+        req.session.flash = ("Task must be atleast 3 characters long");
     } else {
         await pool.promise()
             .query('INSERT INTO jolabn_tasks (task, user_id) VALUES (?,?)', [task, req.session.user_id])
